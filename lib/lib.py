@@ -33,9 +33,9 @@ class Aircraft:
         A = 1.02
         C = -0.06
 
-        w_warmup_frac = 0.97
+        w_warmup_frac = 0.99
         w_taxi_frac = 0.97
-        w_takeoff_frac = 0.97
+        w_takeoff_frac = 0.99
         w_desc_frac = 1
         w_landing_frac = 0.995
 
@@ -70,8 +70,8 @@ class Aircraft:
 
             e = (guess - gross) / 100
 
-            print('LHS ||   ' + str(guess), '', 'w_empty_frac ||   ' + str(w_empty_fraction), '', 'RHS ||   ', gross,
-                  ' ', 'e ||  ' + str(e))
+            # print('LHS ||   ' + str(guess), '', 'w_empty_frac ||   ' + str(w_empty_fraction), '', 'RHS ||   ', gross,
+            #       ' ', 'e ||  ' + str(e))
 
             guess += round(gross, 4)
             guess /= 2
@@ -98,6 +98,7 @@ class Aircraft:
         result = ar / self.wetted_area_ratio
 
         return result
+
 
 a = Aircraft()
 
